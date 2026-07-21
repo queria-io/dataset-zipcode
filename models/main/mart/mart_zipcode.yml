@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: mart_zipcode
-    description: 日本郵便の全国郵便番号データ
+    description: 日本郵便が公開する全国の郵便番号データ。郵便番号（新・旧）と都道府県・市区町村・町域の名称（漢字・カナ）に加え、地方公共団体コードや複数郵便番号・丁目の有無などのフラグを収録する。
     access: public
     config:
       contract:
