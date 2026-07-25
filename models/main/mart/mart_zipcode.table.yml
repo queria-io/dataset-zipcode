@@ -1,0 +1,51 @@
+schema: main
+name: mart_zipcode
+title: 全国郵便番号データ
+description: 日本郵便が公開する全国の郵便番号データ。郵便番号（新・旧）と都道府県・市区町村・町域の名称（漢字・カナ）に加え、地方公共団体コードや複数郵便番号・丁目の有無などのフラグを収録する。
+keywords:
+  - 郵便番号
+  - 住所
+  - 日本郵便
+published: true
+sources:
+  - path: https://www.post.japanpost.jp/zipcode/dl/utf-zip.html
+fields:
+  - name: lg_code
+    title: 全国地方公共団体コード
+    description: JIS X0401, X0402 (6桁、チェックディジット付き)
+  - name: old_zipcode
+    title: 旧郵便番号
+    description: 5桁
+  - name: zipcode
+    title: 郵便番号
+    description: 7桁
+  - name: prefecture_kana
+    title: 都道府県名カタカナ
+  - name: city_kana
+    title: 市区町村名カタカナ
+  - name: town_kana
+    title: 町域名カタカナ
+  - name: prefecture
+    title: 都道府県名漢字
+  - name: city
+    title: 市区町村名漢字
+  - name: town
+    title: 町域名漢字
+  - name: has_multiple_zipcodes
+    title: 一町域複数郵便番号フラグ
+    description: 0/1
+  - name: has_koaza_banchi
+    title: 小字毎番地フラグ
+    description: 0/1
+  - name: has_chome
+    title: 丁目有無フラグ
+    description: 0/1
+  - name: has_multiple_towns
+    title: 複数町域フラグ
+    description: 0/1
+  - name: update_status
+    title: 更新表示
+    description: 0=変更なし、1=変更あり、2=廃止
+  - name: update_reason
+    title: 変更理由
+    description: 0=変更なし、1=市政施行、2=住居表示、3=区画整理、4=郵便区調整、5=訂正、6=廃止

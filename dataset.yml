@@ -1,0 +1,47 @@
+spec_version: "0.1"
+name: zipcode
+title: 郵便番号データ
+description: 日本郵便が公開している全国の郵便番号データ
+keywords:
+  - 郵便番号
+  - 住所
+  - 日本郵便
+homepage: https://github.com/queria-io/dataset-zipcode
+language: ja
+
+licenses:
+  - JP-JAPANPOST-ZIPCODE
+
+sources:
+  - title: 郵便番号データダウンロード（日本郵便）
+    path: https://www.post.japanpost.jp/zipcode/dl/utf-zip.html
+
+contributors:
+  - title: 日本郵便株式会社
+    path: https://www.post.japanpost.jp/
+    roles: [rightsHolder]
+
+spatial_coverage: [JP]
+update_frequency: monthly
+cover: 📮
+
+ai_context:
+  instructions: |
+    郵便番号から住所を引く、住所を郵便番号で名寄せする、市区町村コードと突き合わせる用途に使う。
+    郵便番号は一意ではない。12万4千行に対して郵便番号の異なり数は12万1千弱で、
+    1つの町域に複数の郵便番号がある場合（has_multiple_zipcodes）と、
+    1つの郵便番号が複数の町域にまたがる場合（has_multiple_towns、5千件強）の両方がある。
+    town には「以下に掲載がない場合」（1870件）のような注記がそのまま入るので、
+    住所文字列として連結する前に除く必要がある。
+    lg_code は6桁（チェックディジット付き）。5桁の市区町村コードと結合するときは先頭5桁を使う。
+    収録は KEN_ALL（一般の郵便番号）のみで、大口事業所個別番号は含まない。
+    毎月の最新スナップショットだけを持ち、過去の郵便番号の履歴は持たない。
+  synonyms: [郵便番号, 〒, 住所マスタ, KEN_ALL]
+  examples:
+    - 郵便番号 1000001 の住所は？
+    - 市区町村ごとの郵便番号の数を出したい
+    - 複数の町域にまたがる郵便番号を一覧したい
+
+schemas:
+  - name: main
+    title: メイン
