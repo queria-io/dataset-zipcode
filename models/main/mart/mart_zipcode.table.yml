@@ -13,12 +13,14 @@ fields:
   - name: lg_code
     title: 全国地方公共団体コード
     description: JIS X0401, X0402 (6桁、チェックディジット付き)
+    semantic: { role: entity, name: city }
   - name: old_zipcode
     title: 旧郵便番号
     description: 5桁
   - name: zipcode
     title: 郵便番号
     description: 7桁
+    semantic: { role: entity, name: postal_code }
   - name: prefecture_kana
     title: 都道府県名カタカナ
   - name: city_kana
