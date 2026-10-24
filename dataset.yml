@@ -8,6 +8,7 @@ keywords:
   - 日本郵便
 homepage: https://github.com/queria-io/dataset-zipcode
 language: ja
+themes: [land_climate]
 
 licenses:
   - JP-JAPANPOST-ZIPCODE
