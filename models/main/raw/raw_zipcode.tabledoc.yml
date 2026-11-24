@@ -1,8 +1,7 @@
-schema: main
-name: raw_zipcode
+$schema: https://tabledoc.queria.io/schemas/table/v1.json
 description: 日本郵便の郵便番号データ（utf_ken_all.csv）の生データ
-annotations: { queria: { published: false } }
-fields:
+hidden: true
+columns:
   - name: lg_code
     description: 全国地方公共団体コード（JIS X0401, X0402）
   - name: old_zipcode
