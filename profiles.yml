@@ -20,8 +20,6 @@ zipcode:
         - sqlite
         # build-fdl.sh が作る永続 secret の credential_chain はこの拡張にある
         - aws
-        - name: zipfs
-          repo: community
       # fdl checkout が作った作業場のカタログ (SQLite) に書く。新しいデータファイルは
       # FDL_DATA_PATH に書き、fdl commit が新しいバージョンにする (shared/scripts/build-fdl.sh)
       attach:
